@@ -39,7 +39,6 @@ class GenreDetail(APIView):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-
     def patch(self, request, pk):
         instance = self.get_object(pk=pk)
         serializer = GenreSerializer(
@@ -48,7 +47,6 @@ class GenreDetail(APIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_200_OK)
-
 
     def delete(self: Genre, request: Request, pk: int) -> Response:
         self.get_object(pk=pk).delete()
